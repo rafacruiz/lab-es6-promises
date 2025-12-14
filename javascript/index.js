@@ -28,7 +28,9 @@
 
 
 // Iteration 1 - using callbacks
-// ...
+getInstruction("mashedPotatoes", 5, (step0) => {
+    document.querySelector("#mashedPotatoes").innerHTML += `<li>${step0}</li>`;
+  }, (error) => console.log(error));
 
 // Iteration 2 - using promises
 // ...
