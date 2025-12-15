@@ -87,10 +87,11 @@ obtainInstruction('steak', 0)
                  obtainInstruction('steak', 7)
                   .then( (step1) => {
                     document.querySelector("#steak").innerHTML += `<li>${step1}</li>`
-                    
+
                   obtainInstruction('steak', 8)
                     .then( (step1) => {
                       document.querySelector("#steak").innerHTML += `<li>${step1}</li>`
+                      document.querySelector("#steakImg").removeAttribute("hidden");
                   })
                 })
               })
@@ -103,7 +104,19 @@ obtainInstruction('steak', 0)
 .cathch( (error) => console.log(error));
   
 // Iteration 3 using async/await
-// ...
+async function makeBroccoli() {
+  try {
+    const step0 = await obtainInstruction('broccoli', 0);
+    const step1 = await obtainInstruction('broccoli', 1);
+
+    document.querySelector("#broccoli").innerHTML += `<li>${step0}</li>`
+    document.querySelector("#broccoli").innerHTML += `<li>${step1}</li>`
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+makeBroccoli();
 
 // Bonus 2 - Promise all
 // ...
